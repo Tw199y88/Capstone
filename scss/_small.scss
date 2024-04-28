@@ -39,6 +39,7 @@ body {
 }
 
 #closeButton {
+  margin: 1rem 0;
   font-weight: 600;
   color: $fontColor;
   display: block;
@@ -65,10 +66,13 @@ header {
   
   div {
     display: flex;
-    flex-basis: 90%;
+    flex-basis: 95%;
     align-items: end;
+    figure {
+      margin: 1rem .5rem;
+    }
     h1 {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 500;
       color: $secondaryFontColor;
     }
@@ -96,7 +100,8 @@ header {
   background: $menuColor;
   width: 100%;
   position: absolute;
-  top: 125px;
+  z-index: 12;
+  top: 115px;
   right: 0;
   bottom:0;
   display: none;
@@ -135,52 +140,119 @@ header {
   }
 } //end nav
 
-#properties {
-section{
-  border-radius: 5px;
-display: grid;
-background-color: rgb(16, 54, 90);
-margin: 5px;
-color: $secondaryColor;
-grid-template-areas:
-"name"
-"photo"
-"address"
-"phone";
+main {
+  h1 {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 500;
+    margin: 0;
+  }
+  h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: $secondaryFontColor 
+  }
+  h3 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+  }
 }
-img{
-  grid-area: photo;
-  width: 100%;
-  height: auto;
+.hero{
+  position:relative;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  z-index: 1;
+  video{
+    width: 100%;
+    height: auto;
+  }
+  div{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 10px;
+    right: 10px;
+    height: 100%;
+    .hero-text-block {
+      width: 120px;
+      height: 70%;
+      color: $fontColor;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 8px;
+      padding: 5px;
+      h3 {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0;
+        color: $fontColor 
+      }
+    }
+    .hero-design-marker {
+      background-color: rgb(242,98,91);
+      top: calc(75%);
+      right: 35px;
+      width: 85px;
+      border-radius: 8px;
+      height: 5px;
+    }
+  }
 }
-h2{
-  font-family: "Pinyon Script", cursive;
-  font-weight: 400;
-  font-style: normal;
-  padding: 0 16px;
-  grid-area: name;
-  font-weight: 500;
-  font-size: 45px;
-}
-p{
-  padding-left: 16px;
-  grid-area: address;
-  font-weight: 200;
-}
-a{
-  margin: 16px;
-  border-radius: 8px;
-  background-color: rgb(253, 215, 109);
-  grid-area: phone;
-  text-align: center;
-  height: 50px;
-  padding: 16px;
-  color: black;
-}
-} // end properties parent
 
+#about-help {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  div {
+    margin: .75rem;
+    height: 400px;
+    width: 275px;
+    background-color: rgb(238,238,238);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
+    img {
+      width: 275px;
+    }
+    span {
+      display: block;
+      height: 50px;
+      background-color: rgb(178,63,97);
+      border-radius: 19px 19px 0 0;
+      font-size: 24px;
+      text-align: center;
+      color: white;
+      line-height: 60px;
+    }
+    ul li {
+      font-style: italic;
+      color: rgb(175,175,175)
+    }
+    ul li::marker {
+      color: $secondaryFontColor
+    }
+  }
+}
 
+#about-trust {
+  padding: 10px;
+  
+  section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    img {
+      padding: 1rem;
+      height: 60px;
+    }
+  }
+
+}
 //styling the rows
 .row{
   display: flex;
@@ -216,14 +288,43 @@ $w: calc($i /12) *100%;
 // begin the footer
 
 #footerWrapper {
-    background-color: $menuColor;
+    padding: 1rem;
+    background-color: $footerColor;
     color:rgb(255, 255, 255);
-}
-footer {
-    padding: 0.5rem $gutter;
-    p{
-        margin: 0;
-        font-weight: $lightWeight;
-        text-align: center;
+    h1 {
+      text-align: center;
+      margin: .5rem;
+      margin-top: 1rem;
+    }
+    div#locations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+      color: rgb(131,131,131);
+      section {
+        margin: 1rem 0;
+        h2 {
+          margin: 0;
+          margin-left: .5rem;
+          font-weight: 300;
+        }
+        p {
+          margin: 0;
+          margin-left: 1rem;
+          font-size: 16px;
+          color: rgb(143,143,143);
+        }
+      }
+    }
+    footer {
+        border-top: 1px rgb(143,143,143) dotted;
+        padding: 2rem $gutter;
+        color: rgb(143,143,143);
+        p{
+            margin: 0;
+            font-weight: $lightWeight;
+            text-align: center;
+        }
     }
 }
